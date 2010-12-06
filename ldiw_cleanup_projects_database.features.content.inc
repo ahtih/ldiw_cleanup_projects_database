@@ -57,6 +57,65 @@ return $ret;',
     ),
   );
 
+  // Exported field: field_location_wkt
+  $fields['cleanup_project-field_location_wkt'] = array(
+    'field_name' => 'field_location_wkt',
+    'type_name' => 'cleanup_project',
+    'display_settings' => array(
+      'label' => array(
+        'format' => 'above',
+        'exclude' => 0,
+      ),
+      'teaser' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      '4' => array(
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+    'widget_active' => '1',
+    'type' => 'computed',
+    'required' => '1',
+    'multiple' => '0',
+    'module' => 'computed_field',
+    'active' => '1',
+    'code' => '$latlon=null;
+if (!empty($node->field_region[0][\'value\'])) {
+    $res=geonames_query(\'search\',array(\'name\'=>$node->field_region[0][\'value\'],country=>$node->field_country_code[0][\'value\'],\'featureclass\'=>\'a\'),array(\'columns\'=>array(\'lat\',\'lng\')));
+    if (isset($res->results)) {
+        $latlon=$res->results[0];
+        }
+    }
+
+if (empty($latlon)) {
+    $ci=geonames_countryinfo($node->field_country_code[0][\'value\']);
+    $latlon=geonames_query(\'get\',array(\'geonameid\'=>$ci[\'geonameid\']))->results[0];
+    }
+$node_field[0][\'value\'] = \'POINT(\' . $latlon[\'lng\'] . \' \' . $latlon[\'lat\'] . \')\';',
+    'display_format' => '$display = $node_field_item[\'value\'];',
+    'store' => 1,
+    'data_type' => 'varchar',
+    'data_length' => '50',
+    'data_not_NULL' => 1,
+    'data_default' => '',
+    'data_sortable' => 0,
+    'widget' => array(
+      'default_value' => NULL,
+      'default_value_php' => NULL,
+      'label' => 'Location WKT',
+      'weight' => '35',
+      'description' => '',
+      'type' => 'computed',
+      'module' => 'computed_field',
+    ),
+  );
+
   // Exported field: field_nr_of_volunteers
   $fields['cleanup_project-field_nr_of_volunteers'] = array(
     'field_name' => 'field_nr_of_volunteers',
@@ -211,6 +270,7 @@ return $ret;',
   // Included for use with string extractors like potx.
   t('Actual number of volunteers');
   t('Country');
+  t('Location WKT');
   t('Region within the country');
   t('Website');
 

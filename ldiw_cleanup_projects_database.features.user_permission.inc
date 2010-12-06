@@ -45,6 +45,15 @@ function ldiw_cleanup_projects_database_user_default_permissions() {
     ),
   );
 
+  // Exported permission: edit field_location_wkt
+  $permissions['edit field_location_wkt'] = array(
+    'name' => 'edit field_location_wkt',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
   // Exported permission: edit field_nr_of_volunteers
   $permissions['edit field_nr_of_volunteers'] = array(
     'name' => 'edit field_nr_of_volunteers',
@@ -83,6 +92,15 @@ function ldiw_cleanup_projects_database_user_default_permissions() {
   // Exported permission: view field_country_code
   $permissions['view field_country_code'] = array(
     'name' => 'view field_country_code',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: view field_location_wkt
+  $permissions['view field_location_wkt'] = array(
+    'name' => 'view field_location_wkt',
     'roles' => array(
       '0' => 'anonymous user',
       '1' => 'authenticated user',
