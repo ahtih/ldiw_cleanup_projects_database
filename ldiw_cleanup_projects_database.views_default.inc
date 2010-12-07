@@ -304,7 +304,8 @@ function ldiw_cleanup_projects_database_views_default_views() {
     'type' => 'none',
   ));
   $handler->override_option('title', 'List of LDIW cleanup projects');
-  $handler->override_option('footer', '<a href="/node/add/cleanup-project">Add new cleanup project</a>');
+  $handler->override_option('footer', '<a href="internal:node/add/cleanup-project">Add new cleanup project</a>
+');
   $handler->override_option('footer_format', '1');
   $handler->override_option('footer_empty', 1);
   $handler->override_option('items_per_page', 0);
