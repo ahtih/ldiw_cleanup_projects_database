@@ -36,6 +36,15 @@ function ldiw_cleanup_projects_database_user_default_permissions() {
     ),
   );
 
+  // Exported permission: edit field_cleanup_date
+  $permissions['edit field_cleanup_date'] = array(
+    'name' => 'edit field_cleanup_date',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
+    ),
+  );
+
   // Exported permission: edit field_country_code
   $permissions['edit field_country_code'] = array(
     'name' => 'edit field_country_code',
@@ -86,6 +95,15 @@ function ldiw_cleanup_projects_database_user_default_permissions() {
     'name' => 'edit own cleanup_project content',
     'roles' => array(
       '0' => 'authenticated user',
+    ),
+  );
+
+  // Exported permission: view field_cleanup_date
+  $permissions['view field_cleanup_date'] = array(
+    'name' => 'view field_cleanup_date',
+    'roles' => array(
+      '0' => 'anonymous user',
+      '1' => 'authenticated user',
     ),
   );
 
