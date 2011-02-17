@@ -106,6 +106,13 @@ function ldiw_cleanup_projects_database_strongarm() {
   $strongarm = new stdClass;
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'language_content_type_cleanup_project';
+  $strongarm->value = '0';
+
+  $export['language_content_type_cleanup_project'] = $strongarm;
+  $strongarm = new stdClass;
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_cleanup_project';
   $strongarm->value = array(
     0 => 'status',
