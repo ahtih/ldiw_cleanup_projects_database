@@ -747,22 +747,12 @@ return $data->node_data_field_nr_of_volunteers_field_nr_of_volunteers_value ? 1 
     ),
   ));
   $handler->override_option('sorts', array(
-    'field_country_code_value' => array(
-      'order' => 'ASC',
+    'field_cleanup_date_value' => array(
+      'order' => 'DESC',
       'delta' => -1,
-      'id' => 'field_country_code_value',
-      'table' => 'node_data_field_country_code',
-      'field' => 'field_country_code_value',
-      'override' => array(
-        'button' => 'Use default',
-      ),
-      'relationship' => 'none',
-    ),
-    'title' => array(
-      'order' => 'ASC',
-      'id' => 'title',
-      'table' => 'node',
-      'field' => 'title',
+      'id' => 'field_cleanup_date_value',
+      'table' => 'node_data_field_cleanup_date',
+      'field' => 'field_cleanup_date_value',
       'override' => array(
         'button' => 'Use default',
       ),
