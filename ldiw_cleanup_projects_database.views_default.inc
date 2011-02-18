@@ -839,6 +839,39 @@ return $data->node_data_field_nr_of_volunteers_field_nr_of_volunteers_value ? 1 
       ),
       'relationship' => 'none',
     ),
+    'phpcode_2' => array(
+      'label' => '',
+      'alter' => array(
+        'alter_text' => 0,
+        'text' => '',
+        'make_link' => 0,
+        'path' => '',
+        'link_class' => '',
+        'alt' => '',
+        'prefix' => '',
+        'suffix' => '',
+        'target' => '',
+        'help' => '',
+        'trim' => 0,
+        'max_length' => '',
+        'word_boundary' => 1,
+        'ellipsis' => 1,
+        'html' => 0,
+        'strip_tags' => 0,
+      ),
+      'empty' => '',
+      'hide_empty' => 0,
+      'empty_zero' => 0,
+      'value' => '<?php return ($data->node_data_field_cleanup_date_field_cleanup_date_value >= gmdate(\'Y-m-d\') || (empty($data->node_data_field_cleanup_date_field_cleanup_date_value) && empty($data->node_data_field_cleanup_date_field_nr_of_volunteers_value)) ? \'Future cleanups: \' : \'\') . (empty($data->node_data_field_cleanup_date_field_cleanup_date_value) ? (preg_match(\'/^.*(20[0-2][0-9]).*$/\',$data->node_title) ? preg_replace(\'/^.*(20[0-2][0-9]).*$/\',\'$1\',$data->node_title) : (empty($data->node_data_field_cleanup_date_field_nr_of_volunteers_value) ? gmdate(\'Y\') : \'2008\') ): substr($data->node_data_field_cleanup_date_field_cleanup_date_value,0,4)); ?>',
+      'exclude' => 1,
+      'id' => 'phpcode_2',
+      'table' => 'customfield',
+      'field' => 'phpcode',
+      'override' => array(
+        'button' => 'Use default',
+      ),
+      'relationship' => 'none',
+    ),
   ));
   $handler->override_option('sorts', array(
     'field_cleanup_date_value' => array(
@@ -856,6 +889,67 @@ return $data->node_data_field_nr_of_volunteers_field_nr_of_volunteers_value ? 1 
   $handler->override_option('footer', '<a href="internal:node/add/cleanup-project">Add new cleanup project</a>');
   $handler->override_option('footer_format', '1');
   $handler->override_option('footer_empty', 1);
+  $handler->override_option('style_options', array(
+    'grouping' => 'phpcode_2',
+    'override' => 1,
+    'sticky' => 0,
+    'order' => 'asc',
+    'columns' => array(
+      'field_cleanup_date_value' => 'field_cleanup_date_value',
+      'field_url_value' => 'field_url_value',
+      'title' => 'title',
+      'phpcode_1' => 'phpcode_1',
+      'field_country_code_value' => 'field_country_code_value',
+      'field_region_value' => 'field_region_value',
+      'field_nr_of_volunteers_value' => 'field_nr_of_volunteers_value',
+      'body' => 'body',
+      'phpcode' => 'phpcode',
+      'edit_node' => 'edit_node',
+      'phpcode_2' => 'phpcode_2',
+    ),
+    'info' => array(
+      'field_cleanup_date_value' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
+      'field_url_value' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
+      'title' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
+      'phpcode_1' => array(
+        'separator' => '',
+      ),
+      'field_country_code_value' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
+      'field_region_value' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
+      'field_nr_of_volunteers_value' => array(
+        'sortable' => 0,
+        'separator' => '',
+      ),
+      'body' => array(
+        'separator' => '',
+      ),
+      'phpcode' => array(
+        'separator' => '',
+      ),
+      'edit_node' => array(
+        'separator' => '',
+      ),
+      'phpcode_2' => array(
+        'separator' => '',
+      ),
+    ),
+    'default' => '-1',
+  ));
   $handler->override_option('attachment_position', 'after');
   $handler->override_option('inherit_arguments', TRUE);
   $handler->override_option('inherit_exposed_filters', FALSE);
