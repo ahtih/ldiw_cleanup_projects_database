@@ -13,8 +13,8 @@ function ldiw_cleanup_projects_database_openlayers_styles() {
   $openlayers_styles->description = 'Cleanup project style';
   $openlayers_styles->data = array(
     'pointRadius' => '${phpcode_rendered}',
-    'fillColor' => '#40c040',
-    'strokeColor' => '#606060',
+    'fillColor' => '#ff841f',
+    'strokeColor' => '#909090',
     'strokeWidth' => 1,
     'fillOpacity' => '${phpcode_2_rendered}',
     'strokeOpacity' => 1,
@@ -31,6 +31,8 @@ function ldiw_cleanup_projects_database_openlayers_styles() {
     'labelYOffset' => array(
       'plugin' => 'declutter_labels',
     ),
+    'fontColor' => '#6b311e',
+    'fontWeight' => 'bold',
   );
 
   $export['cleanup_project_style'] = $openlayers_styles;

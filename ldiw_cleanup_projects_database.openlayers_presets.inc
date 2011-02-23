@@ -41,9 +41,9 @@ function ldiw_cleanup_projects_database_openlayers_presets() {
       ),
       'openlayers_behavior_panzoombar' => array(),
     ),
-    'default_layer' => 'osm_mapnik',
+    'default_layer' => 'google_physical',
     'layers' => array(
-      'osm_mapnik' => 'osm_mapnik',
+      'google_physical' => 'google_physical',
       'cleanup_projects_map_openlayers_1' => 'cleanup_projects_map_openlayers_1',
     ),
     'layer_styles' => array(
