@@ -22,9 +22,15 @@ function ldiw_cleanup_projects_database_openlayers_styles() {
     'strokeDashstyle' => 'solid',
     'graphicOpacity' => 1,
     'label' => '${title}',
-    'labelAlign' => 'lt',
-    'labelXOffset' => '10',
-    'labelYOffset' => '-10',
+    'labelAlign' => array(
+      'plugin' => 'declutter_labels',
+    ),
+    'labelXOffset' => array(
+      'plugin' => 'declutter_labels',
+    ),
+    'labelYOffset' => array(
+      'plugin' => 'declutter_labels',
+    ),
   );
 
   $export['cleanup_project_style'] = $openlayers_styles;
