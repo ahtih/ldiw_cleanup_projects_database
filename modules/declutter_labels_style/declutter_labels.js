@@ -65,5 +65,5 @@ Drupal.openlayers.style_plugin["declutter_labels"].prototype=
 	calc_labelYOffset:function(feature)
 		{
 			return (this.calc_labelAlign(feature)[1] == 'b') ? 10 : -10;
-			},
+			}
 	};
